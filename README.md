@@ -77,9 +77,11 @@ That's it! SAE will:
 - Run each test with the EvaluatorAgent
 - Generate markdown reports in the output directory
 
-## Example: Dummy Agent
+## Examples
 
-See `examples/dummy_agent.py` for a complete working example:
+### Example 1: Dummy Agent
+
+See `examples/dummy_agent.py` for a basic working example:
 
 ```bash
 cd examples
@@ -91,6 +93,25 @@ This will:
 1. Create `dummy_tests.xlsx` with 5 test cases
 2. Run evaluation with DummyAgent
 3. Generate reports in `dummy_eval_results/`
+
+### Example 2: SQL Agent
+
+See `examples/sql_agent/` for a real-world SQL agent that converts natural language to SQL:
+
+```bash
+cd examples/sql_agent
+python db_setup.py             # Create database
+python create_test_cases.py    # Generate test cases
+python run_sql_eval.py         # Run evaluation
+```
+
+This demonstrates:
+- Text-to-SQL conversion with Claude
+- Safe SQL execution on SQLite database
+- 10 test cases covering queries, joins, aggregations
+- E-commerce database with products and orders
+
+See `examples/sql_agent/README.md` for details.
 
 ## Test Case Format
 
